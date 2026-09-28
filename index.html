@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dariusz Zgraja: founder, engineer and machine operator building autonomy for construction, agriculture and forestry machines.">
+<title>Dariusz Zgraja</title>
+<style>
+:root{color-scheme:light}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F4F0; --paper:#FAFBF8; --ink:#17201B; --muted:#58645C; --rule:#C9D0C9;
+  --accent:#D9621C; --moss:#3E5A45;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111612; --paper:#171D19; --ink:#E6EBE7; --muted:#9AA69E; --rule:#2F3A33;
+    --accent:#F07D38; --moss:#8DB396; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111612; --paper:#171D19; --ink:#E6EBE7; --muted:#9AA69E; --rule:#2F3A33;
+  --accent:#F07D38; --moss:#8DB396; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);padding-inline:16px;padding-block:32px 56px}
+.sheet{max-width:860px;margin:0 auto;background:var(--paper);border:1.5px solid var(--ink);}
+header.top{padding:40px 36px 28px;display:grid;gap:14px;border-bottom:1.5px solid var(--ink)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(44px,8vw,76px)/.95 var(--display);letter-spacing:-.01em;margin:0;text-transform:uppercase;text-wrap:balance}
+.lede{font-size:19px;line-height:1.5;max-width:60ch;margin:0;color:var(--ink)}
+.plate{margin:8px 0 0;display:grid;gap:6px}
+.plate svg{width:100%;height:auto;display:block;overflow:visible}
+.plate .ln{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.plate .thin{stroke-width:1}
+.plate .dim{fill:none;stroke:var(--accent);stroke-width:1}
+.plate .gnd{fill:none;stroke:var(--muted);stroke-width:1}
+.plate .hatch{stroke-width:.8}
+.plate text{font:400 10px var(--mono);fill:var(--accent);letter-spacing:.06em;opacity:0;animation:fadein .5s ease forwards;animation-delay:var(--d,2.6s)}
+.plate .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:plot var(--t,1.2s) cubic-bezier(.55,.1,.35,1) forwards;animation-delay:var(--d,0s)}
+@keyframes plot{to{stroke-dashoffset:0}}
+@keyframes fadein{to{opacity:1}}
+header.top{position:relative;border-bottom-color:transparent}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:-1.5px;height:1.5px;background:var(--ink);transform-origin:left;animation:rule 1.1s cubic-bezier(.55,.1,.35,1) .1s both}
+@keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){
+  .plate .draw{animation:none;stroke-dashoffset:0}
+  .plate text{animation:none;opacity:1}
+  header.top::after{animation:none}
+}
+.lede em{font-style:normal;color:var(--accent);font-weight:600}
+section{padding:30px 36px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:150px 1fr;gap:24px}
+section h2{font:600 15px/1.2 var(--display);letter-spacing:.14em;text-transform:uppercase;margin:4px 0 0;color:var(--moss)}
+section p{margin:0 0 12px;max-width:64ch}
+section p:last-child{margin-bottom:0}
+.builds{display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.builds li{display:grid;gap:4px}
+.builds strong{font:600 17px/1.3 var(--body)}
+.builds span{color:var(--muted)}
+.spec{width:100%;border-collapse:collapse;font-size:15px}
+.spec th{text-align:left;font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:9px 16px 9px 0;vertical-align:top;width:34%;border-top:1px solid var(--rule)}
+.spec td{padding:8px 0;border-top:1px solid var(--rule)}
+.spec tr:first-child th,.spec tr:first-child td{border-top:0}
+.row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px}
+.chip{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid currentColor;white-space:nowrap}
+.chip.done{color:var(--moss)}
+.chip.wip{color:var(--accent)}
+.chip.plan{color:var(--muted);border-style:dashed}
+.chip.off{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.legend{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-bottom:20px!important}
+.legend .chip{margin-left:6px}
+.legend .chip:first-child{margin-left:0}
+.road{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.road li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.road li:first-child{border-top:0;padding-top:0}
+.road b{font:500 13px/1.5 var(--mono);color:var(--accent)}
+@media (max-width:640px){.road li{grid-template-columns:1fr;gap:4px}}
+.direction{border-left:3px solid var(--accent);padding-left:16px}
+footer.block{display:grid;grid-template-columns:repeat(4,1fr);font:400 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+footer.block div{padding:12px 14px;border-right:1px solid var(--ink)}
+footer.block div:last-child{border-right:0}
+footer.block b{display:block;font-weight:500;color:var(--muted);font-size:10px;margin-bottom:4px}
+@media (max-width:640px){
+  header.top{padding:28px 20px 22px}
+  section{grid-template-columns:1fr;gap:10px;padding:24px 20px}
+  footer.block{grid-template-columns:1fr 1fr}
+  footer.block div:nth-child(2){border-right:0}
+  footer.block div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+  .spec th{width:40%}
+}
+</style>
+</head>
+<body>
+
+
+<main class="sheet">
+  <header class="top">
+    <div class="eyebrow">Founder · Engineer · Operator — Kraków, Poland</div>
+    <h1>Dariusz Zgraja</h1>
+    <p class="lede">I run heavy machines for a living and write the code that could drive them. I want to build <em>autonomy for the machines I've spent years operating</em>, so that construction, agriculture and forestry can keep working when there aren't enough people to run the equipment.</p>
+    <figure class="plate">
+<svg viewBox="0 0 860 204" aria-hidden="true">
+<line class="gnd draw" pathLength="1" style="--d:0s" x1="10" y1="180" x2="850" y2="180"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.21s;--t:.3s" x1="24" y1="180" x2="16" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.22s;--t:.3s" x1="38" y1="180" x2="30" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.23s;--t:.3s" x1="52" y1="180" x2="44" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.23s;--t:.3s" x1="66" y1="180" x2="58" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.24s;--t:.3s" x1="80" y1="180" x2="72" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.25s;--t:.3s" x1="94" y1="180" x2="86" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.25s;--t:.3s" x1="108" y1="180" x2="100" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.26s;--t:.3s" x1="122" y1="180" x2="114" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.27s;--t:.3s" x1="136" y1="180" x2="128" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.28s;--t:.3s" x1="150" y1="180" x2="142" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.28s;--t:.3s" x1="164" y1="180" x2="156" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.29s;--t:.3s" x1="178" y1="180" x2="170" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.30s;--t:.3s" x1="192" y1="180" x2="184" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.30s;--t:.3s" x1="206" y1="180" x2="198" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.31s;--t:.3s" x1="220" y1="180" x2="212" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.32s;--t:.3s" x1="234" y1="180" x2="226" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.32s;--t:.3s" x1="248" y1="180" x2="240" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.33s;--t:.3s" x1="262" y1="180" x2="254" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.34s;--t:.3s" x1="276" y1="180" x2="268" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.34s;--t:.3s" x1="290" y1="180" x2="282" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.35s;--t:.3s" x1="304" y1="180" x2="296" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.36s;--t:.3s" x1="318" y1="180" x2="310" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.37s;--t:.3s" x1="332" y1="180" x2="324" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.37s;--t:.3s" x1="346" y1="180" x2="338" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.38s;--t:.3s" x1="360" y1="180" x2="352" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.39s;--t:.3s" x1="374" y1="180" x2="366" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.39s;--t:.3s" x1="388" y1="180" x2="380" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.40s;--t:.3s" x1="402" y1="180" x2="394" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.41s;--t:.3s" x1="416" y1="180" x2="408" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.42s;--t:.3s" x1="430" y1="180" x2="422" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.42s;--t:.3s" x1="444" y1="180" x2="436" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.43s;--t:.3s" x1="458" y1="180" x2="450" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.44s;--t:.3s" x1="472" y1="180" x2="464" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.44s;--t:.3s" x1="486" y1="180" x2="478" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.45s;--t:.3s" x1="500" y1="180" x2="492" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.46s;--t:.3s" x1="514" y1="180" x2="506" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.46s;--t:.3s" x1="528" y1="180" x2="520" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.47s;--t:.3s" x1="542" y1="180" x2="534" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.48s;--t:.3s" x1="556" y1="180" x2="548" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.48s;--t:.3s" x1="570" y1="180" x2="562" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.49s;--t:.3s" x1="584" y1="180" x2="576" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.50s;--t:.3s" x1="598" y1="180" x2="590" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.51s;--t:.3s" x1="612" y1="180" x2="604" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.51s;--t:.3s" x1="626" y1="180" x2="618" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.52s;--t:.3s" x1="640" y1="180" x2="632" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.53s;--t:.3s" x1="654" y1="180" x2="646" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.53s;--t:.3s" x1="668" y1="180" x2="660" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.54s;--t:.3s" x1="682" y1="180" x2="674" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.55s;--t:.3s" x1="696" y1="180" x2="688" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.55s;--t:.3s" x1="710" y1="180" x2="702" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.56s;--t:.3s" x1="724" y1="180" x2="716" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.57s;--t:.3s" x1="738" y1="180" x2="730" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.58s;--t:.3s" x1="752" y1="180" x2="744" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.58s;--t:.3s" x1="766" y1="180" x2="758" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.59s;--t:.3s" x1="780" y1="180" x2="772" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.60s;--t:.3s" x1="794" y1="180" x2="786" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.60s;--t:.3s" x1="808" y1="180" x2="800" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.61s;--t:.3s" x1="822" y1="180" x2="814" y2="188"/>
+<line class="gnd hatch draw" pathLength="1" style="--d:0.62s;--t:.3s" x1="836" y1="180" x2="828" y2="188"/>
+<rect class="ln draw" pathLength="1" style="--d:0.3s" x="40" y="150" width="190" height="28" rx="14"/>
+<circle class="ln draw" pathLength="1" style="--d:0.5s" cx="56" cy="164" r="11"/>
+<circle class="ln draw" pathLength="1" style="--d:0.5s" cx="214" cy="164" r="11"/>
+<circle class="ln thin draw" pathLength="1" style="--d:0.6s" cx="100" cy="170" r="4"/>
+<circle class="ln thin draw" pathLength="1" style="--d:0.6s" cx="135" cy="170" r="4"/>
+<circle class="ln thin draw" pathLength="1" style="--d:0.6s" cx="170" cy="170" r="4"/>
+<path class="ln draw" pathLength="1" style="--d:0.7s" d="M68,150 L68,140 L212,140 L212,150"/>
+<path class="ln draw" pathLength="1" style="--d:0.8s" d="M40,140 L40,108 L150,98 L150,140"/>
+<path class="ln draw" pathLength="1" style="--d:0.8999999999999999s" d="M150,140 L150,70 L198,70 L212,98 L212,140"/>
+<path class="ln thin draw" pathLength="1" style="--d:1.1s" d="M158,78 L194,78 L203,98 L158,98 Z"/>
+<path class="ln draw" pathLength="1" style="--d:1.2s" d="M200,122 L276,38 L300,44 L222,126 Z"/>
+<circle class="ln draw" pathLength="1" style="--d:1.4000000000000001s" cx="210" cy="120" r="4"/>
+<circle class="ln draw" pathLength="1" style="--d:1.4000000000000001s" cx="289" cy="42" r="4"/>
+<line class="ln draw" pathLength="1" style="--d:1.3s" x1="226" y1="112" x2="262" y2="64"/>
+<path class="ln draw" pathLength="1" style="--d:1.5s" d="M283,38 L297,36 L354,126 L341,132 Z"/>
+<circle class="ln draw" pathLength="1" style="--d:1.7s" cx="348" cy="129" r="4"/>
+<path class="ln draw" pathLength="1" style="--d:1.8s" d="M348,129 C374,128 384,152 368,170 L338,164 Z"/>
+<path class="ln thin draw" pathLength="1" style="--d:2.0s" d="M338,164 L334,170 M348,166 L345,172 M358,168 L356,174"/>
+<circle class="ln draw" pathLength="1" style="--d:0.9s" cx="500" cy="160" r="19"/>
+<circle class="ln draw" pathLength="1" style="--d:0.9s" cx="546" cy="160" r="19"/>
+<circle class="ln draw" pathLength="1" style="--d:0.9s" cx="722" cy="160" r="19"/>
+<circle class="ln draw" pathLength="1" style="--d:0.9s" cx="768" cy="160" r="19"/>
+<circle class="ln thin draw" pathLength="1" style="--d:1.1s" cx="500" cy="160" r="7"/>
+<circle class="ln thin draw" pathLength="1" style="--d:1.1s" cx="546" cy="160" r="7"/>
+<circle class="ln thin draw" pathLength="1" style="--d:1.1s" cx="722" cy="160" r="7"/>
+<circle class="ln thin draw" pathLength="1" style="--d:1.1s" cx="768" cy="160" r="7"/>
+<path class="ln draw" pathLength="1" style="--d:1.2s" d="M468,142 L468,114 L482,106 L590,106 L590,142 Z"/>
+<path class="ln draw" pathLength="1" style="--d:1.4s" d="M528,106 L534,64 L584,64 L588,106"/>
+<path class="ln thin draw" pathLength="1" style="--d:1.6s" d="M540,71 L579,71 L582,98 L540,98 Z"/>
+<circle class="ln draw" pathLength="1" style="--d:1.5s" cx="598" cy="136" r="4"/>
+<rect class="ln draw" pathLength="1" style="--d:1.5s" x="604" y="128" width="196" height="14"/>
+<rect class="ln draw" pathLength="1" style="--d:1.7000000000000002s" x="614" y="66" width="10" height="62"/>
+<path class="ln draw" pathLength="1" style="--d:1.8s" d="M650,128 L650,80 M700,128 L700,80 M750,128 L750,80 M796,128 L796,80"/>
+<path class="ln draw" pathLength="1" style="--d:2.0s" d="M608,128 L608,58 L614,54"/>
+<path class="ln draw" pathLength="1" style="--d:2.1s" d="M612,56 L688,24 L694,32 L618,64"/>
+<path class="ln draw" pathLength="1" style="--d:2.2s" d="M690,28 L748,52 L744,58 L688,34"/>
+<line class="ln thin draw" pathLength="1" style="--d:2.25s" x1="630" y1="62" x2="672" y2="40"/>
+<path class="ln draw" pathLength="1" style="--d:2.4s" d="M746,56 L746,66 M738,66 L754,66 M740,66 C732,76 734,88 744,92 M752,66 C760,76 758,88 748,92"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.5s" cx="660" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.54s" cx="678" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.58s" cx="696" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.62s" cx="714" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.66s" cx="732" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.7s" cx="750" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.74s" cx="768" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.78s" cx="786" cy="119" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.82s" cx="669" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.86s" cx="687" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.9s" cx="705" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.94s" cx="723" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:2.98s" cx="741" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:3.02s" cx="759" cy="102" r="8.5"/>
+<circle class="ln thin draw" pathLength="1" style="--d:3.06s" cx="777" cy="102" r="8.5"/>
+<path class="dim draw" pathLength="1" style="--d:2.4s" d="M40,196 L230,196 M40,191 L40,201 M230,191 L230,201"/>
+<path class="dim draw" pathLength="1" style="--d:2.4s" d="M500,196 L768,196 M500,191 L500,201 M768,191 L768,201"/>
+<path class="dim draw" pathLength="1" style="--d:2.5s" d="M372,40 L372,180 M367,40 L377,40 M367,180 L377,180"/>
+</svg>
+    </figure>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <div>
+      <p>I build businesses. For four years I've run my own forestry company: finding clients, pricing jobs, hiring and managing the people on each job, buying and rebuilding the machinery, and working alongside my crew. In 2022 I co-founded and self-funded a SaaS for construction firms. Today I'm building a physical-AI startup for heavy machinery.</p>
+      <p>On the engineering side I've worked as a mechanical design engineer and freelance on machine design for agtech and construction-tech clients. I write C++ for robots and work in cybersecurity. Before all this I worked on road and paving crews and as a machine operator, so I know construction sites from the ground up.</p>
+      <p>At AGH University of Kraków I studied mechanical engineering and am finishing civil engineering.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div>
+      <p class="legend"><span class="chip done">Built</span> finished and in use <span class="chip wip">In progress</span> active work <span class="chip plan">Planned</span> next on the roadmap <span class="chip off">Shut down</span> closed, with lessons</p>
+      <ul class="builds">
+        <li><div class="row"><strong>Forestry business</strong><span class="chip done">Built</span></div><span>Four years running, built from zero. Operating, maintaining and rebuilding my own machinery. This is my testbed and my first customer base.</span></li>
+        <li><div class="row"><strong>SaaS for small construction firms · 2022</strong><span class="chip off">Shut down</span></div><span>Co-founded with a partner. Automated documentation, bills of materials and schedules for small builders. Self-funded, closed for lack of product-market fit. Lesson: validate demand before building.</span></li>
+        <li><div class="row"><strong>Grapple for a forestry crane</strong><span class="chip done">Built</span></div><span>Designed in CAD, strength-calculated, welded and integrated with a rotator and tractor, with full technical documentation.</span></li>
+        <li><div class="row"><strong>Robots and a drone</strong><span class="chip done">Built</span></div><span>Line-following robots, a combat robot and a drone, programmed in C++ on microcontrollers.</span></li>
+        <li><div class="row"><strong>Autonomy stack</strong><span class="chip wip">In progress</span></div><span>SLAM, computer vision (CNNs) and C++/ROS2, built as the base for autonomous heavy machines.</span></li>
+        <li><div class="row"><strong>Crane perception prototype</strong><span class="chip plan">Planned</span></div><span>A camera on my own forestry crane that detects and localizes logs, the first step toward operator-assist and then autonomous loading. Tested on real work, not in simulation.</span></li>
+        <li><div class="row"><strong>Heavy-machine data logger</strong><span class="chip wip">In progress</span></div><span>A plug-in box that records what a machine and its operator actually do: CAN bus signals, hydraulic states, joystick inputs, cameras and GPS, synced in time. Installed first on my own tractor and crane, then on contractors' excavators. It builds the dataset autonomy models need to learn from real operators, shows owners where machine hours are wasted, and maps how exposed each machine's control network is.</span></li>
+        <li><div class="row"><strong>Drone site scan to earthworks volumes</strong><span class="chip plan">Planned</span></div><span>Drone photogrammetry turned into a site model, compared against the design to compute cut and fill volumes and track progress. Uses what I know from civil engineering and my drone builds, and becomes the map autonomous machines work from.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Spec sheet</h2>
+    <div style="overflow-x:auto">
+      <table class="spec">
+        <tr><th>Business</th><td>Founder of a forestry company (4 years): sales, pricing, hiring and managing crews · SaaS co-founder (2022) · freelance engineering for agtech and construction-tech clients</td></tr>
+        <tr><th>Software</th><td>C++, ROS2, SLAM, computer vision, Arduino / embedded</td></tr>
+        <tr><th>Mechanical</th><td>Mechanical design engineer · Autodesk Inventor, Fusion · strength calculations · welding, machine repair</td></tr>
+        <tr><th>Electrical</th><td>Electrical and electronics: machine wiring, sensors, microcontrollers</td></tr>
+        <tr><th>Construction</th><td>Field experience on road and paving crews · machine operator on sites</td></tr>
+        <tr><th>Education</th><td>AGH University of Kraków: mechanical engineering · civil engineering</td></tr>
+        <tr><th>Security</th><td>Cybersecurity practitioner, focused on ICS/OT (industrial control systems) and offensive security · TryHackMe top 500 · 750+ day streak</td></tr>
+        <tr><th>Certified</th><td>Excavator operator · forklift · forestry machinery · tractor licence</td></tr>
+        <tr><th>Languages</th><td>Polish (native) · English (C1) · German (B2)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Direction</h2>
+    <div class="direction">
+      <p>My answer to a problem I see every day: there aren't enough people to do the work. Construction, agriculture and forestry are losing skilled operators faster than they can train new ones. Experienced operators are retiring, young people don't want dangerous, remote, physically hard jobs, and projects and harvests slip because nobody is available to run the machines. I've seen this directly, running my own business and working on machines myself.</p>
+      <p>Autonomy is how I want to close that gap. Not by replacing the few skilled people who are left, but by letting one operator do the work of several and handing the repetitive, dangerous tasks to the machine. Most fleets are old mixed-brand equipment that OEM autonomy will never reach, so I'm building toward a retrofit stack (perception, control and security by design) that makes existing machines semi-autonomous, starting with narrow repetitive tasks.</p>
+      <p>The three industries share the same problem and much of the same machinery: tractors, loaders, excavators and cranes doing repetitive work outdoors on rough terrain. Forestry is my testbed because I own the machines and the terrain. Construction (excavation, trenching, earthmoving, site logistics) and agriculture (field work, loading, material handling in tight seasonal windows) are the large markets the same stack moves into next.</p>
+      <p>Security is part of that product from day one. An autonomous 20-ton machine is an OT system on tracks: CAN bus, hydraulic controllers, PLCs and remote telemetry, most of it never designed to be networked. Once a machine can move without an operator, a compromised controller becomes a physical safety problem. My security background, focused on ICS/OT, lets me design the autonomy stack to be secure from the first line of code.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Roadmap</h2>
+    <ol class="road">
+      <li><b>Now → Q1 2027</b><span>Crane perception prototype and data logger on my own machines. First conversations with forestry and construction contractors about what they would pay to automate.</span></li>
+      <li><b>2027</b><span>Operator-assist retrofit kit for one machine type and one repetitive task, running with paying pilot customers.</span></li>
+      <li><b>2028 →</b><span>Semi-autonomous operation across mixed fleets, with security built into the stack. Expand from forestry to construction and infrastructure.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Vision</h2>
+    <div class="direction">
+      <p>A vertically integrated physical-AI company for the industries I come from: forestry, construction, agriculture, energy and infrastructure. Software that drives machines, the hardware to retrofit them, and security that makes them safe to trust. Built by people who have actually operated the equipment.</p>
+    </div>
+  </section>
+
+  <footer class="block">
+    <div><b>Sheet</b>1 / 1</div>
+    <div><b>Scale</b>1 : 1</div>
+    <div><b>Rev</b>J</div>
+    <div><b>Date</b>2026-09-28</div>
+  </footer>
+</main>
+
+</body>
+</html>
